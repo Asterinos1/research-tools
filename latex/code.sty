@@ -1,0 +1,47 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ececode}[2026/02/17 ECE Dark Code Highlighting]
+
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+
+% 1. Dark Theme Color Palette (One Dark / Monokai inspired)
+\definecolor{bgdark}{RGB}{40, 44, 52}
+\definecolor{keyword}{RGB}{198, 120, 221}
+\definecolor{string}{RGB}{152, 195, 121}
+\definecolor{comment}{RGB}{92, 99, 112}
+\definecolor{number}{RGB}{0, 0, 0}
+\definecolor{identifier}{RGB}{97, 175, 239}
+
+% 2. Global Style Configuration
+\lstset{
+    backgroundcolor=\color{bgdark},   
+    commentstyle=\color{comment}\itshape,
+    keywordstyle=\color{keyword}\bfseries,
+    numberstyle=\small\color{number},
+    stringstyle=\color{string},
+    identifierstyle=\color{identifier},
+    basicstyle=\ttfamily\small\color{white},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    tabsize=4,
+    frame=tb, % Top and bottom lines
+    rulecolor=\color{gray},
+    framerule=0.5pt,
+    mathescape=false,      % Ensure $ is treated as text, not math
+    escapeinside={(*@}{@*)}, % Use this if you EVER need to escape to LaTeX
+}
+
+% 3. Language-specific environments
+\lstnewenvironment{python}[1][]{\lstset{language=Python, #1}}{}
+\lstnewenvironment{java}[1][]{\lstset{language=Java, #1}}{}
+\lstnewenvironment{scala}[1][]{\lstset{language=Scala, #1}}{}
+\lstnewenvironment{sql}[1][]{\lstset{language=SQL, #1}}{}
+\lstnewenvironment{javascript}[1][]{\lstset{language=JavaSript, #1}}{}
+\lstnewenvironment{htmlcode}[1][]{\lstset{language=HTML, #1}}{}
+\lstnewenvironment{csscode}[1][]{\lstset{language=CSS, #1}}{}
