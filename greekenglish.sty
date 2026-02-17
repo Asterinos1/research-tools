@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{seamless-greek}[2026/02/17 Unicode Greek/English Switch]
+
+\RequirePackage{fontspec}
+% Using Babel for modern LuaLaTeX/XeLaTeX integration
+\RequirePackage[greek, english]{babel}
+
+% Setup fonts (Ensure these are installed on your Windows 11 system)
+% 'Libertinus Serif' is excellent for engineering and has full Greek support
+\babelfont{rm}{Libertinus Serif}
+\babelfont[greek]{rm}{Libertinus Serif}
+
+% This allows you to type Greek directly without \foreignlanguage or \textgreek
+\babelprovide[import, main, onchar=ids fonts]{english}
+\babelprovide[import, onchar=ids fonts]{greek}
