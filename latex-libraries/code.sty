@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{ececode}[2026/02/17 ECE Dark Code Highlighting]
+\ProvidesPackage{code}[2026/02/17 ECE Dark Code Highlighting]
 
 \RequirePackage{xcolor}
 \RequirePackage{listings}
@@ -37,11 +37,29 @@
     escapeinside={(*@}{@*)}, % Use this if you EVER need to escape to LaTeX
 }
 
-% 3. Language-specific environments
+% 3. Language definitions missing in standard listings
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, switch, var, let, const, if, in, while, do, else, case, break, async, await, class, export, import, this},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinelanguage{CSS}{
+    keywords={color, background, margin, padding, font, width, height, border, display, flex, grid},
+    sensitive=false,
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+% 4. Language-specific environments
 \lstnewenvironment{python}[1][]{\lstset{language=Python, #1}}{}
 \lstnewenvironment{java}[1][]{\lstset{language=Java, #1}}{}
 \lstnewenvironment{scala}[1][]{\lstset{language=Scala, #1}}{}
 \lstnewenvironment{sql}[1][]{\lstset{language=SQL, #1}}{}
-\lstnewenvironment{javascript}[1][]{\lstset{language=JavaSript, #1}}{}
+\lstnewenvironment{javascript}[1][]{\lstset{language=JavaScript, #1}}{}
 \lstnewenvironment{htmlcode}[1][]{\lstset{language=HTML, #1}}{}
 \lstnewenvironment{csscode}[1][]{\lstset{language=CSS, #1}}{}

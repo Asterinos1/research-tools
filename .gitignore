@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Environment / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.local
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# LaTeX build & auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.idx
+*.ilg
+*.ind
+*.ins
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+*.lot
+*.lof
+
+# Ignore all PDFs except demonstration example.pdf
+*.pdf
+!latex-libraries/example.pdf
+
+# AI Bundler outputs
+*_AI_BUNDLE.md
+*_MASTER_SOURCE.txt
+*_directory_tree.txt
